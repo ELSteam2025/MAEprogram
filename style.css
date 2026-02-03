@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 20px;
+  color: #3d3d3d;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #000000 60%);
+  color: white;
+  animation: bgMove 12s ease-in-out infinite alternate;
+}
+
+.hero-section {
+  position: relative;          
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  padding-top: 120px;          
+  padding-bottom: 80px;
+
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 1px;
+
+  background: linear-gradient(90deg, #ffb300, #ffd700, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 25px rgba(255, 200, 0, 0.35);
+  filter: drop-shadow(0 0 15px rgba(255,200,0,0.35));
+
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 28px;
+  color: #e0e0e0;
+  text-shadow: 0 0 12px rgba(255,255,255,0.15);
+  max-width: 800px;
+  margin: 0 auto 35px;
+}
+
+.gold-line {
+  width: 180px;
+  height: 3px;
+  margin: 25px auto;
+  border-radius: 5px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  box-shadow: 0 0 12px rgba(255,215,0,0.6);
+}
+
+.hero-info {
+  background: rgba(0,0,0,0.45);
+  padding: 30px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  max-width: 700px;
+  color: #ffffff;
+
+  border: 1px solid rgba(255,215,0,0.25);
+  box-shadow:
+    0 0 25px rgba(255,215,0,0.12),
+    inset 0 0 15px rgba(255,215,0,0.05);
+
+  text-align: left;
+  line-height: 1.8;
+  font-size: 16px;
+  transition: 0.35s;
+}
+
+.hero-info:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 40px rgba(255,215,0,0.25),
+    inset 0 0 20px rgba(255,215,0,0.1);
+}
+
+.hero-info strong {
+  color: #ffd700;
+  text-shadow: 0 0 6px rgba(255,215,0,0.4);
+}
+
+.hero-button {
+  margin-top: 40px;
+  padding: 16px 38px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #ffb300, #ffd700);
+  color: black;
+
+  box-shadow:
+    0 0 20px rgba(255,215,0,0.5),
+    0 0 40px rgba(255,215,0,0.25);
+
+  transition: 0.3s ease;
+  animation: pulse 2.5s infinite;
+}
+
+.hero-button:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 35px rgba(255,215,0,0.8),
+    0 0 70px rgba(255,215,0,0.4);
+}
+
+canvas#fire-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px rgba(255,215,0,0.4); }
+  50% { box-shadow: 0 0 45px rgba(255,215,0,0.9); }
+  100% { box-shadow: 0 0 20px rgba(255,215,0,0.4); }
+}
+
+@media (max-width: 1024px) {
+
+  .hero-section {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-subtitle {
+    font-size: 22px;
+  }
+
+  .hero-info {
+    padding: 22px 26px;
+    font-size: 15px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+    padding: 14px 30px;
+  }
+
+  .gold-line {
+    width: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero-section {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .hero-content {
+    padding: 0 14px;
+  }
+
+  .hero-info {
+    padding: 18px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
+
+  .hero-button {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  .gold-line {
+    width: 100px;
+    height: 2px;
+    margin: 18px auto;
+  }
+}
